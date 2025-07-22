@@ -1,20 +1,17 @@
-import './Projects.css'; // Import CSS สำหรับ Projects Component
+import './Projects.css';
 
-// สมมติว่ามีรูปภาพโปรเจกต์ของคุณ
-// คุณควรเปลี่ยน 'path/to/project-image.jpg' เป็นที่อยู่รูปภาพจริงของแต่ละโปรเจกต์
-import project1Image from './../assets/c.png'; // ตัวอย่าง
-import project2Image from './../assets/github.png'; // ตัวอย่าง
-import project3Image from './../assets/figma.png'; // ตัวอย่าง
+import project1Image from './../assets/c.png';
+import project2Image from './../assets/github.png';
+import project3Image from './../assets/figma.png';
 
 const Projects = () => {
-  // สร้าง Array ของข้อมูล Project เพื่อให้ง่ายต่อการ Render
   const projectData = [
     {
       id: 1,
       title: 'E-commerce Platform',
       description: 'Full-stack e-commerce solution with user authentication, product catalog, shopping cart, and payment integration.',
       image: project1Image,
-      link: 'https://github.com/yourusername/ecommerce-repo', // ลิงก์ไปยัง GitHub หรือ Demo
+      link: 'https://github.com/yourusername/ecommerce-repo',
       technologies: ['React', 'Node.js', 'Express', 'MongoDB']
     },
     {
@@ -33,15 +30,6 @@ const Projects = () => {
       link: 'https://github.com/yourusername/portfolio-repo',
       technologies: ['React', 'CSS3', 'Figma']
     },
-    // เพิ่ม Project อื่นๆ ได้ที่นี่
-    // {
-    //   id: 4,
-    //   title: 'Blockchain DApp',
-    //   description: 'Decentralized application for secure data sharing on a private blockchain network.',
-    //   image: project4Image,
-    //   link: 'https://github.com/yourusername/dapp-repo',
-    //   technologies: ['Solidity', 'Web3.js', 'Ganache']
-    // },
   ];
 
   return (
@@ -52,7 +40,13 @@ const Projects = () => {
 
       <div className="projects-grid">
         {projectData.map((project) => (
-          <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-card" key={project.id}>
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-card"
+            key={project.id}
+          >
             <div className="project-image-container">
               <img src={project.image} alt={project.title} className="project-image" />
             </div>
@@ -64,8 +58,6 @@ const Projects = () => {
                   <span key={index} className="tech-tag">{tech}</span>
                 ))}
               </div>
-              {/* Optional: ปุ่ม "View Details" ถ้าอยากให้คลิกการ์ดแล้วค่อยมีปุ่ม */}
-              {/* <button className="project-button">View Details</button> */}
             </div>
           </a>
         ))}

@@ -11,7 +11,7 @@
 }
 body {
   /* กำหนดรูปภาพพื้นหลัง */
-  background-image: url('./assets/background1.jpg'); /* !!! เปลี่ยน 'path/to/your/image.jpg' เป็นที่อยู่ไฟล์รูปภาพของคุณ !!! 
+  /* background-image: url('./assets/background1.jpg'); /* !!! เปลี่ยน 'path/to/your/image.jpg' เป็นที่อยู่ไฟล์รูปภาพของคุณ !!!  */
 
 
   /* กำหนดการจัดวางรูปภาพ */
@@ -29,7 +29,7 @@ body {
   /* ถ้าต้องการให้เลื่อนตาม ก็ใช้ scroll (ค่า default) */
 
   /* Optional: เพิ่มพื้นหลังสี fallback เผื่อรูปภาพโหลดไม่ได้ หรือใส่สีทับซ้อน (overlay) เพื่อให้ข้อความอ่านง่ายขึ้น */
-  background-color: #000000; /* สีดำเข้ม */
+  background-color: #ffffff; /* สีดำเข้ม */
 }
 
 

@@ -3,35 +3,50 @@
 /* ส่วนของ #Home Section หลัก */
 #Home {
     display: flex;
-    align-items: center; /* จัดกลางแนวตั้ง */
-    justify-content: space-around; /* จัดกลางแนวนอน, กระจายพื้นที่ว่าง */
+    align-items: center;
+    justify-content: center; /* จาก space-around → center */
     flex-direction: row;
+    flex-wrap: wrap;
     min-height: 100vh;
-    color: rgb(255, 255, 255);
     padding: 40px;
-    flex-wrap: wrap; /* อนุญาตให้ items ขึ้นบรรทัดใหม่เมื่อพื้นที่ไม่พอ */
-    gap: 40px; /* ระยะห่างระหว่าง Home-text และ Home-logo */
+    color: white;
+    column-gap: 40px; /* เพิ่ม spacing ด้วย gap แทน */
+    
+}
+.Home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    max-width: 600px;  /* 💥 คุมไม่ให้ข้อความกว้างเกินไป */
+}
 
-    /* เพิ่มพื้นหลังตามรูปภาพที่คุณให้มา */
-    background-image: url('./../assets/your-background-image.jpg'); /* *** ตรวจสอบและเปลี่ยน Path ของรูปภาพพื้นหลังของคุณ! *** */
-    background-size: cover; /* ครอบคลุมพื้นที่ทั้งหมด */
-    background-position: center; /* จัดตำแหน่งรูปภาพกลาง */
-    background-repeat: no-repeat; /* ไม่ให้รูปภาพซ้ำ */
-    background-attachment: fixed; /* ทำให้พื้นหลังอยู่นิ่งเมื่อ scroll */
-    /* background-color: rgba(0, 0, 0, 0.2); /* อาจจะเพิ่มสีดำโปร่งแสงทับ เพื่อให้ข้อความอ่านง่ายขึ้น */
+
+/* Tablet/Mobile */
+@media screen and (max-width: 768px) {
+  .Home-content {
+    margin-bottom: 20px; /* ลดช่องว่างระหว่างข้อความกับรูป */
+  }
+
+  .Home-text {
+    margin-bottom: 10px;
+  }
+
+  .Home-logo {
+    margin: 10px 0;
+  }
 }
 
 /* ส่วนของ Home-text (กล่องข้อความ) */
 .Home-text {
     max-width: 800px;
     background-color: #ffffff;
-    color: #000e55;
+    color: #000000;
     opacity: 0.9;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5),
-                0 4px 8px rgba(169, 19, 180, 0.2);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.5),
+                0 6px 20px rgba(169, 19, 180, 0.2);
     border-radius: 20px;
-    padding: 20px;
-    /* margin-bottom: 40px; ถ้า Home-text เป็น flex item หลัก และต้องการให้มีการจัด gap ด้วย ควรลบ margin-bottom ออก */
+    padding: 20px;  
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     flex-shrink: 1; /* อนุญาตให้ Home-text หดตัวได้ถ้าจำเป็น */
     flex-basis: auto; /* หรือกำหนดค่าที่เหมาะสมเช่น 500px, 600px */
@@ -46,11 +61,11 @@
 
 .Home-text h1 {
     font-size: 50px;
-    background: linear-gradient(90deg, #5e00b7, #ff0080);
+    background: linear-gradient(90deg, rgba(9, 9, 121, 1), rgba(0, 212, 255, 1));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: #a855f7;
+    color: #000000;
 }
 
 .Home-text p {
@@ -75,7 +90,7 @@
     padding: 12px 25px;
     border: none;
     border-radius: 50px;
-    background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+    background: linear-gradient(90deg,rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1)100%);
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -92,7 +107,7 @@
 
 .download-cv:hover,
 .view-pj:hover {
-    background: linear-gradient(90deg, #fc5c7d 0%, #6a82fb 100%);
+    background: linear-gradient(90deg,rgba(9, 9, 121, 1) 0%,rgba(0, 212, 255, 1) 100%);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     transform: translateY(-3px);
 }
@@ -146,97 +161,81 @@
                 0 0 120px rgba(255, 255, 255, 0.4);
 }
 
-/* ============================================== */
-/* Media Queries เพื่อการ Responsive */
-/* ============================================== */
-
-/* สำหรับหน้าจอขนาดกลาง (เช่น Tablet ในแนวตั้ง) */
-@media (max-width: 1024px) {
+/* สำหรับหน้าจอขนาดกลาง (tablets) */
+@media screen and (max-width: 1024px) {
     #Home {
-        padding: 30px;
-        gap: 30px; /* ลด gap ลงเล็กน้อย */
+        padding: 20px;
+        justify-content: center;
     }
 
     .Home-text {
-        max-width: 90%; /* ให้กล่องข้อความกว้างขึ้นบน Tablet */
+        max-width: 600px;
+        margin: 20px 0;
     }
 
     .Home-text h1 {
-        font-size: 45px; /* ลดขนาด font h1 */
+        font-size: 40px;
     }
 
     .Home-text p {
-        font-size: 18px; /* ลดขนาด font p */
-    }
-
-    .Home-logo {
-        max-width: 350px; /* ปรับขนาด logo เล็กน้อย */
+        font-size: 18px;
     }
 
     .Home-logo img {
         width: 250px;
     }
-
-    .footer-Home {
-        gap: 20px; /* ลด gap ของปุ่ม */
-    }
 }
 
-/* สำหรับหน้าจอขนาดเล็ก (เช่น Mobile) */
-@media (max-width: 768px) {
+/* สำหรับหน้าจอขนาดเล็ก (smartphones) */
+@media screen and (max-width: 768px) {
     #Home {
-        flex-direction: column; /* เปลี่ยนเป็น column layout */
-        justify-content: center; /* จัดกลางเมื่อเป็น column */
-        padding: 20px;
-        gap: 20px; /* ลด gap เมื่อเป็น column */
+        padding: 15px;
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
     }
 
     .Home-text {
-        max-width: 100%; /* ให้ Home-text กว้างเต็มที่ */
+        max-width: 100%;
+        margin: 20px 0;
         padding: 15px;
-        text-align: center; /* จัดข้อความกลางเมื่ออยู่บนมือถือ */
-        margin-bottom: 0; /* ลบ margin-bottom ออกเมื่อเป็น column */
     }
 
     .Home-text h1 {
-        font-size: 35px; /* ลดขนาด font h1 ลงอีก */
+        font-size: 32px;
     }
 
     .Home-text p {
-        font-size: 15px; /* ลดขนาด font p ลงอีก */
-    }
-
-    .footer-Home {
-        flex-direction: column; /* ให้ปุ่มเรียงเป็น column */
-        gap: 15px;
-        width: 100%; /* ให้ footer-Home กว้างเต็มที่ */
-        margin-top: 20px; /* เพิ่มระยะห่างจาก Home-text ที่อยู่ด้านบน */
-    }
-
-    .download-cv,
-    .view-pj {
-        width: 90%; /* ทำให้ปุ่มกว้างขึ้นบนมือถือ */
-        padding: 10px 20px;
         font-size: 16px;
-        margin: 0 auto; /* จัดปุ่มกลางเมื่อเป็น column */
     }
 
     .Home-logo {
-        max-width: 100%; /* ให้ Home-logo กว้างเต็มที่ */
-        margin-right: 0; /* ลบ margin-right ออก */
-        margin-top: 20px; /* เพิ่มระยะห่างจาก Home-text */
+        margin: 20px 0;
     }
 
     .Home-logo img {
-        width: 200px; /* ลดขนาดรูปภาพลงอีก */
-        height: auto;
+        width: 200px;
+        max-height: 300px;
+    }
+
+    .footer-Home {
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .download-cv,
+    .view-pj {
+        padding: 10px 20px;
+        font-size: 16px;
+        width: 80%;
+        max-width: 300px;
     }
 }
 
-/* สำหรับหน้าจอขนาดเล็กมาก (เช่น iPhone SE หรือจอขนาดเล็กพิเศษ) */
-@media (max-width: 480px) {
+/* สำหรับหน้าจอขนาดเล็กมาก */
+@media screen and (max-width: 480px) {
     .Home-text h1 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .Home-text p {
@@ -244,12 +243,7 @@
     }
 
     .Home-logo img {
-        width: 150px;
-    }
-
-    .download-cv,
-    .view-pj {
-        font-size: 14px;
-        padding: 10px 15px;
+        width: 180px;
+        max-height: 250px;
     }
 }

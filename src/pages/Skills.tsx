@@ -17,7 +17,9 @@ import postman from './../assets/postman.png';
 const Skills = () => {
   return (
     <section id="skills" className="Skils">
-      <div className='skills-header'><h2>My Skills</h2></div>
+      <div className='cotainer-skills-header'>
+      <div className='skills-header'><h2>Tech Stack</h2></div>
+      </div>
       <div className="skills-list">
         <div className="skill-card"><img src={react} alt='react'></img></div>
         <div className="skill-card"><img src={typescript} alt='typescript'></img></div>

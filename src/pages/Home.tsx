@@ -7,16 +7,16 @@ const Home = () => {
         <div className="Home-text">
           <h1>Hi, I'm Kim 👋</h1>
           <h2>Welcome To My Portfolio</h2>
-          <p>
-            I am a 4th-year Computer Engineering student skilled in both
-            frontend and backend development using TypeScript, Go, React, and
-            UX/UI design with Figma. Experienced in API development, Git,
-            RESTful APIs, and databases such as MySQL, PostgreSQL, and SQLite. I
-            am highly motivated, adaptable, and thrive under pressure, with a
-            strong commitment to continuous self-improvement and growth in this
-            field. My goal is to contribute to cloud-based solutions at TCC
-            Technology.
-          </p>
+          <p className="thai-text">
+  ผมเป็นนักศึกษาชั้นปีที่ 4 สาขาวิศวกรรมคอมพิวเตอร์
+  มีทักษะด้านการพัฒนาโปรแกรมทั้งฝั่ง Frontend และ Backend โดยใช้
+  TypeScript, Go, React รวมถึงมีความรู้ด้านการออกแบบ UX/UI ด้วย Figma
+  อย่างมีประสิทธิภาพ มีประสบการณ์ในการพัฒนา API, การใช้งาน Git,
+  RESTful APIs และฐานข้อมูลหลากหลายประเภท เช่น MySQL, PostgreSQL และ
+  SQLite ด้วยความกระตือรือร้นในการเรียนรู้ ปรับตัวได้ดีภายใต้แรงกดดัน
+  และมุ่งมั่นที่จะพัฒนาตนเองอย่างต่อเนื่อง
+</p>
+
         </div>
         <div className="footer-Home">
           <a

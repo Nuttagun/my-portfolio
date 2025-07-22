@@ -12,7 +12,7 @@ const Projects = () => {
   const projectData = [
     {
       id: 1,
-      title: "Health And Wellness Web Application",
+      title: "Health And Wellness Web Application (Private)",
       description:
         "เว็บแอปสุขภาพที่มีแชทบอท AI ช่วยให้คำแนะนำด้านสุขภาพแบบเรียลไทม์ตลอด 24 ชม",
       image: health,

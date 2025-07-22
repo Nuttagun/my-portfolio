@@ -18,7 +18,7 @@
     flex-direction: column;
     align-items: center;
     flex: 1;
-    max-width: 600px;  /* 💥 คุมไม่ให้ข้อความกว้างเกินไป */
+    max-width: 800px;  /* 💥 คุมไม่ให้ข้อความกว้างเกินไป */
 }
 
 
@@ -39,7 +39,6 @@
 
 /* ส่วนของ Home-text (กล่องข้อความ) */
 .Home-text {
-    max-width: 800px;
     background-color: #ffffff;
     color: #000000;
     opacity: 0.9;
@@ -69,8 +68,9 @@
 }
 
 .Home-text p {
-    margin-top: 10px;
-    font-size: 20px;
+  font-family: 'Kanit', sans-serif !important;
+  font-size: 20px;
+  line-height: 1.8;
 }
 
 /* Footer ของ Home Section (ปุ่ม) */

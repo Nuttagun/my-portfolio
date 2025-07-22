@@ -55,7 +55,7 @@
 /* ✅ การ์ดรวม - ใช้ grid ตามขนาดหน้าจอ */
 .skills-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* PC 4 คอลัมน์ */
+  grid-template-columns: repeat(6, 1fr); /* PC 4 คอลัมน์ */
   gap: 30px;
   width: 100%;
   max-width: 1200px;
@@ -69,14 +69,14 @@
 /* ✅ Responsive: iPad / Tablet */
 @media (max-width: 1024px) {
   .skills-list {
-    grid-template-columns: repeat(2, 1fr); /* iPad 2 คอลัมน์ */
+    grid-template-columns: repeat(4, 1fr); /* iPad 2 คอลัมน์ */
   }
 }
 
 /* ✅ Responsive: มือถือ */
 @media (max-width: 600px) {
   .skills-list {
-    grid-template-columns: repeat(2, 1fr); /* มือถือ 2 คอลัมน์ */
+    grid-template-columns: repeat(4, 1fr); /* มือถือ 2 คอลัมน์ */
     gap: 20px;
     padding: 0 10px;
   }

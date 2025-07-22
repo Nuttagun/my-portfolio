@@ -18,7 +18,7 @@ const Skills = () => {
   return (
     <section id="skills" className="Skils">
       <div className='cotainer-skills-header'>
-      <div className='skills-header'><h2>Tech Stack</h2></div>
+      <div className='skills-header'><h2>Tech Stacks</h2></div>
       </div>
       <div className="skills-list">
         <div className="skill-card"><img src={react} alt='react'></img></div>

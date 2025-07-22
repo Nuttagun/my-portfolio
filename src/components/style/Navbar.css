@@ -82,12 +82,12 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-#skills {
-  scroll-margin-top: 80px; /* ให้เบราว์เซอร์เลื่อนลงมาโดยเว้นที่ navbar ไว้ */
+
+#projects {
+  padding-top: 80px;
 }
-#projects{
-    scroll-margin-top: 80px;
-}
+
+
 
 /* หรือถ้า browser ไม่รองรับ scroll-margin-top ลองใช้แบบนี้ */
 #skills::before {

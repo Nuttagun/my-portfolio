@@ -1,0 +1,71 @@
+.Skils{
+    display:flex;
+    color: aliceblue;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border-radius: 30px;
+}
+.skills-header h2 {
+    font-size: 80px; /* ขนาดหัวข้อ */
+    margin: 0; /* ลบ margin เริ่มต้นของ h2 ออก */
+    padding: 0; /* ลบ padding เริ่มต้นของ h2 ออก */
+    line-height: 1; /* ปรับ line-height เพื่อลดช่องว่างเหนือ/ใต้ตัวอักษร */
+
+    color: white; /* ข้อความเป็นสีขาว */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* ปรับให้เงาเข้มขึ้นเล็กน้อยถ้าข้อความเป็นสีขาว */
+    font-weight: bold; /* อาจจะเพิ่มความหนาของตัวอักษรด้วย */
+}
+
+.skills-header {
+    background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%); /* ม่วง -> ชมพู */
+    border-radius: 20px;
+    display: flex;
+    padding: 20px 40px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4),
+                0 0 15px 3px rgba(255, 255, 255, 0.3);
+
+    transition: all 0.4s ease-in-out;
+}
+/* เอฟเฟกต์ Hover สำหรับ .skills-header */
+.skills-header:hover {
+    background: linear-gradient(90deg, #fc5c7d 0%, #6a82fb 100%);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6),
+                0 0 25px 8px rgba(255, 255, 255, 0.5);
+    transform: translateY(-5px);
+}
+.skills-list{
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    column-gap: 150px; /* ช่องระหว่างการ์ดแนวนอน */
+    row-gap: 30px;     /* ช่องระหว่างแถว */
+
+    flex-wrap: wrap;
+}
+.skills-list img{
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.skill-card{
+    border-radius: 40px;
+    padding:20px;
+    width: 200px;
+    height: 200px;
+    display: flex;               /* ✅ เปิดโหมด flex */
+    align-items: center;         /* ✅ จัดกลางแนวตั้ง */
+    justify-content: center;     /* ✅ จัดกลางแนวนอน */
+    background-color: rgba(255, 255, 255, 0.9); /* พื้นหลังดำโปร่งใสสำหรับแต่ละการ์ด */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px); /* เลื่อนขึ้นเล็กน้อย */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* เงาเข้มขึ้น */
+}

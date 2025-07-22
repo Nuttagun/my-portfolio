@@ -1,0 +1,145 @@
+/* Projects.css */
+
+.Projects-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 40px; /* เพิ่ม padding บน-ล่าง */
+    min-height: 100vh; /* ให้กินพื้นที่เต็มจอ */
+    color: white; /* สีข้อความโดยรวม */
+    /* ถ้ามี background-image ที่ body อยู่แล้ว อาจไม่ต้องใส่ background-color ตรงนี้ */
+}
+
+/* สไตล์สำหรับ Header ของ Project Section (คล้าย Skills Header) */
+.projects-header {
+    background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+    border-radius: 20px;
+    display: flex;
+    padding: 20px 40px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px; /* เพิ่มระยะห่างจาก Grid ด้านล่าง */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4),
+                0 0 15px 3px rgba(255, 255, 255, 0.3);
+    transition: all 0.4s ease-in-out;
+}
+
+.projects-header:hover {
+    background: linear-gradient(90deg, #fc5c7d 0%, #6a82fb 100%);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6),
+                0 0 25px 8px rgba(255, 255, 255, 0.5);
+    transform: translateY(-5px);
+}
+
+.projects-header h2 {
+    font-size: 80px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    color: white; /* ข้อความสีขาว */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+}
+
+/* สไตล์สำหรับ Grid ของ Project Cards */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid, card กว้างขั้นต่ำ 350px */
+    gap: 40px; /* ระยะห่างระหว่าง Project Card */
+    max-width: 1200px; /* จำกัดความกว้างสูงสุดของ Grid */
+    width: 100%;
+}
+
+/* สไตล์สำหรับ Project Card แต่ละใบ */
+.project-card {
+    background-color: rgba(30, 30, 30, 0.9); /* พื้นหลังการ์ดสีดำโปร่งใส */
+    border-radius: 20px;
+    overflow: hidden; /* ซ่อนส่วนเกินของรูปภาพ */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* เงาเข้มขึ้น */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* ลบขีดเส้นใต้ของลิงก์ */
+    color: inherit; /* ให้สีข้อความคงอยู่ */
+    display: flex; /* ทำให้เนื้อหาภายใน card จัดเรียงได้ */
+    flex-direction: column; /* วางรูปภาพ, ข้อความเรียงจากบนลงล่าง */
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* ยกขึ้นเมื่อ hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7), /* เงาเข้มขึ้นมาก */
+                0 0 25px 5px rgba(255, 255, 255, 0.4); /* แสงเรืองบางๆ */
+}
+
+.project-image-container {
+    width: 100%;
+    height: 250px; /* กำหนดความสูงของ Container รูปภาพ */
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ทำให้รูปภาพครอบคลุมพื้นที่โดยไม่บิดเบี้ยว */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05); /* ขยายรูปภาพเล็กน้อยเมื่อ hover */
+}
+
+.project-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* ทำให้ส่วนข้อมูลยืดได้เต็มที่ */
+}
+
+.project-info h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #6a82fb; /* สีม่วงสำหรับชื่อโปรเจกต์ */
+}
+
+.project-info p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #cccccc; /* สีเทาอ่อนสำหรับคำอธิบาย */
+    margin-bottom: 20px;
+    flex-grow: 1; /* ทำให้คำอธิบายยืดได้ */
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* ระยะห่างระหว่าง Tech Tags */
+    margin-top: 15px;
+}
+
+.tech-tag {
+    background-color: rgba(255, 255, 255, 0.15); /* พื้นหลัง Tag โปร่งใส */
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Optional: ปุ่ม View Details (ถ้าจะใช้) */
+/* .project-button {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fc5c7d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.project-button:hover {
+    background-color: #e04b6b;
+} */

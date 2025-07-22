@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Inter', sans-serif;
+}
+body {
+  /* กำหนดรูปภาพพื้นหลัง */
+  background-image: url('./assets/background1.jpg'); /* !!! เปลี่ยน 'path/to/your/image.jpg' เป็นที่อยู่ไฟล์รูปภาพของคุณ !!! 
+
+
+  /* กำหนดการจัดวางรูปภาพ */
+  background-size: cover; /* ทำให้รูปภาพครอบคลุมพื้นที่ทั้งหมด (อาจมีบางส่วนถูกตัดออก) */
+  /* หรือ background-size: contain; ถ้าต้องการให้รูปภาพแสดงเต็มรูป โดยอาจมีพื้นที่ว่างเหลือ */
+  /* หรือ background-size: 100% 100%; ถ้าต้องการให้รูปภาพยืดเต็มพื้นที่พอดี */
+
+  background-position: center center; /* จัดตำแหน่งรูปภาพให้อยู่กึ่งกลางทั้งแนวตั้งและแนวนอน */
+  /* หรือ background-position: top center; หรือ 50% 50%; */
+
+  background-repeat: no-repeat; /* ป้องกันไม่ให้รูปภาพซ้ำกัน */
+  /* ถ้าต้องการให้รูปภาพซ้ำแบบ pattern ก็ใช้ repeat-x, repeat-y, หรือ repeat */
+
+  background-attachment: fixed; /* ทำให้รูปภาพพื้นหลังอยู่นิ่ง ไม่เลื่อนตามการ Scroll */
+  /* ถ้าต้องการให้เลื่อนตาม ก็ใช้ scroll (ค่า default) */
+
+  /* Optional: เพิ่มพื้นหลังสี fallback เผื่อรูปภาพโหลดไม่ได้ หรือใส่สีทับซ้อน (overlay) เพื่อให้ข้อความอ่านง่ายขึ้น */
+  background-color: #000000; /* สีดำเข้ม */
+}
+
+
+

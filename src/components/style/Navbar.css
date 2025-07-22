@@ -1,0 +1,186 @@
+/* Navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem; /* ใช้ rem เพื่อให้ responsive ได้ดีขึ้น */
+    color: rgb(255, 255, 255);
+    position: fixed; /* ทำให้ Navbar ติดอยู่ด้านบนเมื่อเลื่อนหน้าจอ */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* ให้ Navbar อยู่ด้านบนสุด */
+    flex-wrap: wrap; /* อนุญาตให้ items ขึ้นบรรทัดใหม่เมื่อพื้นที่ไม่พอ */
+    background: #000000;
+    background: linear-gradient(
+        90deg,
+        rgb(32, 53, 112) 0%,
+        rgba(0, 6, 94, 1) 50%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    opacity: 0.9;
+    transition: background-color 0.3s ease; /* เพิ่ม transition ให้กับ background */
+}
+
+.navbar-title {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    /* ป้องกันการหดตัวของ title มากเกินไป */
+    flex-shrink: 0;
+}
+
+.navbar-list {
+    display: flex;
+    list-style: none;
+    gap: 1.7rem;
+    margin: 0; /* ลบ margin เริ่มต้นของ ul */
+    padding: 0; /* ลบ padding เริ่มต้นของ ul */
+    flex-wrap: wrap; /* เพื่อให้ link ขึ้นบรรทัดใหม่ถ้าจำเป็น */
+    justify-content: flex-end; /* จัดลิงก์ไปทางขวา */
+}
+
+.navbar-list a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    transition: color 0.3s, text-shadow 0.3s, transform 0.2s;
+    padding-bottom: 5px; /* เพิ่ม padding ด้านล่างเล็กน้อย */
+}
+
+.navbar-list a:hover {
+    color: rgb(255, 236, 67);
+    text-shadow: 0 0 8px rgb(255, 255, 255);
+    transform: scale(1.1);
+}
+
+/* ============================================== */
+/* CSS สำหรับ Hamburger Menu (ต้องมี HTML/JS เพิ่มเติม) */
+/* ============================================== */
+
+/* ซ่อนปุ่ม Hamburger โดยค่าเริ่มต้นสำหรับหน้าจอขนาดใหญ่ */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    z-index: 1001; /* ให้อยู่เหนือ Navbar List */
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* สไตล์เมื่อ Hamburger ถูก 'active' (ตัวอย่าง: สำหรับ X icon) */
+/* สมมติว่าเมื่อเมนูถูกเปิด จะมี class 'open' เพิ่มให้กับ .menu-toggle */
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* ============================================== */
+/* Media Queries เพื่อการ Responsive */
+/* ============================================== */
+
+/* สำหรับหน้าจอขนาดกลาง (Tablet) */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+
+    .navbar-title {
+        font-size: 2.2rem;
+    }
+
+    .navbar-list {
+        gap: 1.2rem;
+    }
+
+    .navbar-list a {
+        font-size: 1.3rem;
+    }
+}
+
+/* สำหรับหน้าจอขนาดเล็ก (Mobile) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row; /* คง flex-direction เป็น row เพื่อให้ title กับ menu-toggle อยู่คนละฝั่ง */
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem 1rem;
+    }
+
+    .navbar-title {
+        font-size: 2rem;
+        flex-grow: 1; /* ให้ title ขยายตัวเพื่อผลัก menu-toggle ไปทางขวา */
+    }
+
+    /* แสดง Hamburger Icon */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* ซ่อน Navbar List ตามค่าเริ่มต้น */
+    .navbar-list {
+        display: none; /* ซ่อนเมนูสำหรับ mobile */
+        flex-direction: column; /* จัดเรียงเป็น column */
+        width: 100%; /* กินพื้นที่เต็มความกว้าง */
+        background: linear-gradient(
+            90deg,
+            rgb(32, 53, 112) 0%,
+            rgba(0, 6, 94, 1) 50%,
+            rgba(0, 0, 0, 1) 100%
+        ); /* ใช้สีเดียวกับ navbar */
+        position: absolute; /* วางซ้อนทับ */
+        top: 100%; /* อยู่ใต้ Navbar พอดี */
+        left: 0;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    /* แสดง Navbar List เมื่อเมนูถูกเปิด (สมมติว่ามี class 'active' หรือ 'open') */
+    /* คุณจะต้องใช้ JavaScript เพื่อเพิ่ม/ลบ class 'active' นี้ */
+    .navbar-list.active {
+        display: flex; /* แสดงเมนู */
+    }
+
+    .navbar-list li {
+        margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างรายการเมนู */
+    }
+
+    .navbar-list a {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        display: block; /* ทำให้ลิงก์เต็มความกว้าง */
+    }
+}
+
+/* สำหรับหน้าจอขนาดเล็กมาก (Mobile Landscape / Small Devices) */
+@media (max-width: 480px) {
+    .navbar-title {
+        font-size: 1.8rem;
+    }
+
+    .navbar-list a {
+        font-size: 1rem;
+    }
+}

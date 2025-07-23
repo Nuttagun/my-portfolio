@@ -20,7 +20,7 @@ const Home = () => {
         </div>
         <div className="footer-Home">
           <a
-            href="https://drive.google.com/file/d/1M2EFMsdFaXa6dFsjrFU7qcGcvOfNLstg/view?usp=sharing"
+            href="https://drive.google.com/file/d/1TXHWh7lBt1YrDyULZp-i4AsUJ69-qdnZ/view?usp=sharing"
             download
             target="_blank"
             rel="noopener noreferrer"

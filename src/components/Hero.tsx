@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
           My name is Nuttagun Samanajai
           <br />
           I'm 4 year Computer Engineering Student From Suranaree University
-          <br />I want to be Full Stack Developer.
+          <br />
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center item-center">

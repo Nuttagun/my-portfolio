@@ -20,6 +20,18 @@ import postman from './../assets/icons/postman.png'
 import ollama from './../assets/icons/ollama.png'
 import jenkins from './../assets/icons/jenkins.png'
 import colab from './../assets/icons/colab.png'
+import pandas from './../assets/icons/pandas.png'
+import numpy from './../assets/icons/numpy.png'
+import tensorflow from './../assets/icons/tensorflow.png'
+import keras from './../assets/icons/keras.png'
+import pytorch from './../assets/icons/pytorch.png'
+import plotly from './../assets/icons/plotly.png'
+import matplot from './../assets/icons/matplotlib.png'
+import yolo from './../assets/icons/yolo.png'
+import unsloth from './../assets/icons/unsloth.jpg'
+import roboflow from './../assets/icons/roboflow.png'
+import pyspark from './../assets/icons/pyspark.png'
+
 
 const skillCategories = [
   {
@@ -71,6 +83,23 @@ const skillCategories = [
       { name: "Ollama", icon: ollama },
       { name: "Colab", icon: colab },
       { name: "Docker", icon: docker }
+    ]
+  },
+  {
+    title: "AI Tools",
+    color: "bg-yellow-600",
+    skills: [
+      { name: "Pandas", icon: pandas },
+      { name: "numpy", icon: numpy },
+      { name: "Tensorflow", icon: tensorflow },
+      { name: "Keras", icon: keras},
+      { name: "PyTorch", icon: pytorch },
+      { name: "Plotly", icon: plotly},
+      { name: "Matplot", icon: matplot },
+      { name: "Yolo", icon: yolo },
+      { name: "Unsloth", icon: unsloth },
+      { name: "Roboflow", icon: roboflow },
+      { name: "PySpark", icon: pyspark }
     ]
   }
 ];

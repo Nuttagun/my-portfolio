@@ -26,8 +26,14 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="mb-6 md:mb-0">
             <h3 className="text-xl font-semibold mb-2">Portfolio</h3>
-            <p className="text-slate-400">
+            <p className="text-white">
               Building skills for co-op experience
+              <br/>
+              Tel. 064-276-3875
+              <br/>
+              <div className="text-white">
+              Email : nuttagunsamanjai@gmail.com
+              </div>
             </p>
           </div>
 
